@@ -1,18 +1,15 @@
 package com.sample.myapp;
 
-public class HelloController {
-	IHelloService helloService;
-	
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+
+public class HelloController {
+	@Autowired
+	IHelloService helloService;
+		
 	public void hello(String name) {
 		System.out.println("HelloController :"+ helloService.sayHello(name) );
 	}
-	
-	public void setHelloService(IHelloService helloService) {
-		this.helloService = helloService;
-	}
-	
-
-	
 	
 }
